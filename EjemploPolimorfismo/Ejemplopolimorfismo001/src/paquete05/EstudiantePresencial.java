@@ -5,22 +5,23 @@
  */
 package paquete05;
 
-public class EstudiantePresencial extends Estudiante{
+public class EstudiantePresencial extends Estudiante {
+
     /*1.  Declarar
         numeroCreditos: Entero 
         costoCredito: Real 
-        */
+     */
     int numeroCreditos;
     double costoCredito;
-   
+
     //  Métodos establecer y calcular para los datos o atributos de la clase
     // 2.  Método establecerNumeroCreditos(numero: Real)
-    public void establecerNumeroCreditos(int numero){
+    public void establecerNumeroCreditos(int numero) {
         numeroCreditos = numero;
     }
-    
+
     // 3.  Método establecerCostoCredito(valor: Real)
-    public void establecerCostoCredito(double valor){
+    public void establecerCostoCredito(double valor) {
         costoCredito = valor;
     }
 
@@ -28,19 +29,35 @@ public class EstudiantePresencial extends Estudiante{
     // Se implementa el método abstracto declarado en la superclase,
     // bajo las condiciones propias de la subclase
     @Override
-    public void calcularMatricula(){
+    public void calcularMatricula() {
         matricula = numeroCreditos * costoCredito;
     }
 
     //  Métodos obtener para los datos o atributos de la clase
     // 5. Método obtenerNumeroCreditos() : Entero
-    public int obtenerNumeroCreditos(){
-        return numeroCreditos; 
+    public int obtenerNumeroCreditos() {
+        return numeroCreditos;
     }
 
     // 6. Método obtenerCostoCredito() : Real
-    public double obtenerCostoCredito(){
+    public double obtenerCostoCredito() {
         return costoCredito;
     }
-    
+
+    @Override
+    public String toString() {
+        String cadenaFinal = String.format("---Reporte Estudiante Presencial----\n"
+                + "%s", super.toString());
+        cadenaFinal = String.format("%s"
+                + "Costo Crédito: %.2f\n"
+                + "Número de Créditos: %d\n"
+                + "Total Matricula: %.2f\n",
+                cadenaFinal,
+                obtenerCostoCredito(),
+                obtenerNumeroCreditos(),
+                obtenerMatricula());
+
+        return cadenaFinal;
+    }
+
 }
