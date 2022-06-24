@@ -1,4 +1,3 @@
-
 package paquete03;
 
 import java.util.Scanner;

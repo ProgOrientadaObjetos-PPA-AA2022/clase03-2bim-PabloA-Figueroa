@@ -10,5 +10,14 @@ package herencia4;
  * @author reroes
  */
 public class Reporte {
-   protected String codigo;
+
+    protected String codigo;
+  
+    public String getLista() {
+        return codigo;
+    }
+
+    public void setLista(String codigo) {
+        this.codigo = codigo;
+    }
 }
