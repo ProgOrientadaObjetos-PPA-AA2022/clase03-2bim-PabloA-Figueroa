@@ -80,8 +80,12 @@ public abstract class Estudiante {
     public double obtenerMatricula(){
         return matricula;
     }
+    /*Agrego un to String en la super clase para facilitar la presentacion de los datos
+    de sus subclases
+    */
     @Override
     public String toString(){
+         //Genero una cadena que contenga los atributos de la clase Estudiante
         String cadena = String.format("Nombre: %s\n"
                 + "Apellido: %s\n"
                 + "Identificación: %s\n"
